@@ -3,6 +3,7 @@ const path = require("path");
 const hbs = require("hbs");
 const forcast = require("./Utils/forcast")
 
+const port = process.env.PORT || 3000
 const app = express();
 app.set('view engine', 'hbs')
 
@@ -92,6 +93,6 @@ app.get('*',(req ,res) => {
         error2:"404 page"
     })
 })
-app.listen(3000,() => {
-    console.log("server works in port 3000")
+app.listen(port,() => {
+    console.log("server works in port "+port)
 })
